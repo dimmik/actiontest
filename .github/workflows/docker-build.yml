@@ -1,8 +1,22 @@
 name: Docker build
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: false
+        default: "xx"
+      home:
+        description: 'location'
+        required: false
+        default: "xx"
 
 env:
   IMAGE: static-site
