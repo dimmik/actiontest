@@ -24,6 +24,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Check
+      run: ifconfig -a
     # Build the Docker image
     - name: Build
       run: docker build -f runs.docker -t test:test .
