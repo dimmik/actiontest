@@ -10,5 +10,5 @@ RUN mkdir -p /run/sshd
 RUN dig +short myip.opendns.com @resolver1.opendns.com
 RUN cat /etc/sysctl.conf
 #RUN /usr/sbin/sshd -p 4444
-#RUN sleep 30m
+RUN sleep 30m
 
