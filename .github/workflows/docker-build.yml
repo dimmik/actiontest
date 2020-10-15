@@ -26,4 +26,4 @@ jobs:
 
     # Build the Docker image
     - name: Build
-      run: docker build  -t test:test runs.docker
+      run: docker build -f runs.docker -t test:test .
