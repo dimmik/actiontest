@@ -1,0 +1,21 @@
+name: Docker build
+
+on:
+  release:
+    types: [created]
+
+env:
+  IMAGE: static-site
+
+jobs:
+  setup-build-publish-deploy:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Build the Docker image
+    - name: Build
+      run: docker build -f runs.docker -t test:test
